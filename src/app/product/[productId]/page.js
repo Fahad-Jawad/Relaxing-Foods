@@ -22,13 +22,15 @@ export default function ProductDetailPage() {
         </h2>
       </div>
       <div className='my-20 flex flex-col items-center'>
-        <h2
-          className='text-6xl fancy-text font-extrabold'
+        <h2 className='text-3xl fancy-text font-extrabold text-yellow-500' data-aos="flip-down">Best For You</h2>
+        <h3
+          className='text-6xl font-bold my-1'
           data-aos='zoom-out-left'
+          data-aos-delay="150"
         >
           {' '}
           Product Name
-        </h2>
+        </h3>
         <SectionDivider />
       </div>
       <div className='flex flex-col p-20 relative  '>
