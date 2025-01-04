@@ -17,5 +17,107 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var("--font-geist-mono");
+}
+
+.fancy-text{
+  font-family: var(--font-dancing-script);
+}
+
+
+/* Initial state of the dropdown */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  color: #4a4a4a;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: max-content;
+  transform: translateY(20px); /* Initially, the dropdown will be 20px below its normal position */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Apply smooth transition for opacity and transform */
+  pointer-events: none; /* Prevent interaction before it's visible */
+}
+
+/* Show the dropdown when hovering over the parent element */
+.group:hover .dropdown-menu {
+  opacity: 1; /* Fade in */
+  transform: translateY(0px); /* Slide up into view */
+  pointer-events: auto; /* Enable interaction with the dropdown */
+}
+
+/* Hover effect for links */
+.dropdown-menu a {
+  padding: 8px 16px;
+  display: block;
+  text-decoration: none;
+  color: #4a4a4a;
+}
+
+.dropdown-menu a:hover {
+  background-color: #6363632d;
+}
+
+
+.custom-shape-divider-top-1735738335 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1735738335 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 113px;
+}
+
+.custom-shape-divider-top-1735738335 .shape-fill {
+  fill: #FFFFFF;
+}
+.custom-shape-divider-bottom-1735738407 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1735738407 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 113px;
+}
+
+.custom-shape-divider-bottom-1735738407 .shape-fill {
+  fill: #FFFFFF;
+}
+.categoryLink {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  width: max-content;
+  transition-duration: 200ms;
+}
+
+.categoryLink:hover{
+  scale: 1.09;
+  color: white;
+}
+
+
+.product-name{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+  url('/images/slide1.png');
+background-size: cover;
+background-attachment: fixed;
+background-repeat: no-repeat;
 }
