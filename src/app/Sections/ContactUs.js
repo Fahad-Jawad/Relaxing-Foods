@@ -22,7 +22,7 @@ export default function ContactUs() {
             data-aos='fade-up'
             data-aos-delay='200'
           >
-            <div className='bg-black rounded-full p-3'>
+            <div className='bg-primary rounded-full p-3'>
               <Image
                 src={'/images/icons/PhoneWhite.svg'}
                 alt='modern design'
@@ -40,7 +40,7 @@ export default function ContactUs() {
             data-aos='fade-up'
             data-aos-delay='300'
           >
-            <div className='bg-black rounded-full p-3'>
+            <div className='bg-primary rounded-full p-3'>
               <Image
                 src={'/images/icons/Location.svg'}
                 alt='modern design'
@@ -61,7 +61,7 @@ export default function ContactUs() {
             data-aos='fade-up'
             data-aos-delay='400'
           >
-            <div className='bg-black rounded-full p-3'>
+            <div className='bg-primary rounded-full p-3'>
               <Image
                 src={'/images/icons/SendWhite.svg'}
                 alt='modern design'
@@ -82,7 +82,7 @@ export default function ContactUs() {
           data-aos='zoom-in-left'
           data-aos-delay='100'
         >
-          <h2 className='text-xl font-extrabold text-gray-300 fancy-text'>
+          <h2 className='text-xl font-extrabold text-primary fancy-text'>
             Have Question?
           </h2>
           <h3 className='text-3xl font-bold my-2'>Send us a Message</h3>

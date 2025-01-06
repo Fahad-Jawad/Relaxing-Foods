@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #7f6b33;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -114,10 +115,47 @@ body {
 }
 
 
-.product-name{
+.product-name,.productsPageName{
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
   url('/images/slide1.png');
 background-size: cover;
 background-attachment: fixed;
 background-repeat: no-repeat;
+}
+
+.custom-list {
+  list-style: none; /* Remove default bullets or numbers */
+  padding: 0;       /* Remove default padding */
+}
+
+.custom-list li {
+  position: relative;
+  padding-left: 1.5rem; /* Space for the custom symbol */
+  margin-bottom: 0.5rem;
+}
+
+.custom-list li::before {
+  content: '⦾'; /* Custom symbol */
+  position: absolute;
+  left: 0;      /* Align the symbol to the left */
+  color: var(--primary);
+  font-size: 1.2rem; /* Adjust size (optional) */
+}
+
+.underline-animation {
+  position: relative;
+}
+
+.underline-animation::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 1px;
+  width: 0;
+  background-color: black;
+  transition: width 0.3s ease-in-out;
+}
+.underline-animation:hover::after {
+  width: 80%;
 }

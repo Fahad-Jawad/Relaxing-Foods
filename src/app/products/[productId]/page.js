@@ -1,19 +1,39 @@
 'use client';
 import SectionDivider from '@/app/components/SectionDivider';
 import Image from 'next/image';
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'next/navigation'; // Import useParams to access params
 import 'aos/dist/aos.css'; // AOS styles
-import { useEffect } from 'react';
 import AOS from 'aos';
+import { productData } from '@/app/constants/ProductsData';
 
 export default function ProductDetailPage() {
+  const [product, setProduct] = useState(null); // State to store the product
+  const { productId } = useParams(); // Get productId from the URL using useParams hook
+
+  useEffect(() => {
+    if (productId) {
+      console.log('pp',productId)
+
+      // Find the product from productData using productId
+      const foundProduct = productData.find((product) => product.id == productId);
+      console.log('ff',foundProduct)
+      if (foundProduct) {
+        setProduct(foundProduct); // Set the product in state
+      }
+    }
+  }, [productId]); // Run this effect when productId changes
+
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration (in ms)
       once: false,
     });
   }, []);
+
+  if (!product) {
+    return <div>Loading...</div>; // Show a loading message if product is not found
+  }
   return (
     <div>
       <div className='p-20 py-40 product-name'>
@@ -22,14 +42,18 @@ export default function ProductDetailPage() {
         </h2>
       </div>
       <div className='my-20 flex flex-col items-center'>
-        <h2 className='text-3xl fancy-text font-extrabold text-yellow-500' data-aos="flip-down">Best For You</h2>
+        <h2
+          className='text-3xl fancy-text font-extrabold text-primary'
+          data-aos='flip-down'
+        >
+          Best For You
+        </h2>
         <h3
           className='text-6xl font-bold my-1'
           data-aos='zoom-out-left'
-          data-aos-delay="150"
+          data-aos-delay='150'
         >
-          {' '}
-          Product Name
+          {product.name}
         </h3>
         <SectionDivider />
       </div>
@@ -161,7 +185,11 @@ export default function ProductDetailPage() {
                   />
                 </div>
                 <div className='flex flex-col gap-2'>
-                  <h3 className='text-base font-bold' data-aos='flip-down' data-aos-delay='300'>
+                  <h3
+                    className='text-base font-bold'
+                    data-aos='flip-down'
+                    data-aos-delay='300'
+                  >
                     Cashew
                   </h3>
                   <p data-aos='fade-right' data-aos-delay='300'>
@@ -172,6 +200,59 @@ export default function ProductDetailPage() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className='flex items-center p-20'>
+        <div className='w-1/2'>
+          <h2 className='text-4xl font-bold'>Description</h2>
+          <SectionDivider />
+          <p className='text-gray-400'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+            distinctio ipsa at obcaecati iure? Maiores voluptatibus minus fugit
+            quia explicabo laudantium eum esse sapiente, error quisquam
+            provident, eos ratione corporis. Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Odio explicabo placeat maxime hic,
+            laborum provident quo quaerat commodi illum repellendus possimus
+            quia ab ex aliquam aperiam veritatis eaque ipsa labore.
+          </p>
+
+          <h3 className='text-base bg-primary p-1 px-4 mt-4 text-white rounded-full w-max'>
+            Benifits
+          </h3>
+          <div className='flex   gap-6 mt-4 text-base text-gray-400'>
+            <div className='w-1/2 flex flex-col gap-2'>
+              <ul className='custom-list'>
+                <li>
+                  Almonds, walnuts, and cashews are rich in Vitamin E,
+                  magnesium, potassium, and calcium.
+                </li>
+                <li>
+                  Dry fruits boost energy with natural sugars like fructose and
+                  glucose.
+                </li>
+              </ul>
+            </div>
+            <div className='w-1/2 flex flex-col gap-2'>
+              <ul className='custom-list'>
+                <li>
+                  Healthy fats in nuts improve cholesterol by lowering LDL and
+                  raising HDL.
+                </li>
+                <li>Some dry fruits act as prebiotics, aiding gut health.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className='w-1/2 flex justify-center'>
+          <Image
+            src='/images/product.png'
+            alt='product'
+            width={400}
+            height={300}
+            data-aos='zoom-in'
+            className='w-2/3 h-2/3'
+          />
         </div>
       </div>
     </div>

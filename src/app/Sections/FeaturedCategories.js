@@ -17,10 +17,10 @@ export default function FeaturedCategories() {
             />
           </div>
           <div className='w-1/2 h-full flex flex-col px-2 py-4'>
-            <h2 className='text-3xl font-bold text-[#8fa38b]'>
+            <h2 className='text-3xl font-bold text-[#647261]'>
               Relaxing Essence
             </h2>
-            <div className='flex flex-col gap-2 mt-3 text-base text-[#8fa38b] font-semibold'>
+            <div className='flex flex-col gap-2 mt-3 text-base text-[#647261] font-semibold'>
               <Link href={'#'} className='categoryLink'>⦾ Ashwa-Poppy Fusion</Link>
               <Link href={'#'} className='categoryLink'>⦾ Turmeric Bliss</Link>
               <Link href={'#'} className='categoryLink'>⦾ Garlic Elan</Link>
@@ -40,10 +40,10 @@ export default function FeaturedCategories() {
             />
           </div>
           <div className='w-1/2 h-full flex flex-col px-2 py-4'>
-            <h2 className='text-3xl font-bold text-[#ccab51] '>
+            <h2 className='text-3xl font-bold text-primary '>
               Energy Booster
             </h2>
-            <div className='flex flex-col gap-2 mt-3 text-base text-[#ccab51] font-semibold'>
+            <div className='flex flex-col gap-2 mt-3 text-base text-primary font-semibold'>
               <Link href={'#'} className='categoryLink'>⦾ Golden Coconut Treat</Link>
               <Link href={'#'} className='categoryLink'>⦾ Almond Nirvana</Link>
               <Link href={'#'} className='categoryLink'>⦾ Walnut Luxe Delight</Link>
@@ -64,10 +64,10 @@ export default function FeaturedCategories() {
             />
           </div>
           <div className='w-1/2 h-full flex flex-col px-2 py-4'>
-            <h2 className='text-3xl font-bold text-[#48939d]'>
+            <h2 className='text-3xl font-bold text-[#32666d]'>
               Natural Aphrodisiac
             </h2>
-            <div className='flex flex-col gap-2 mt-3 text-base text-[#48939d] font-semibold'>
+            <div className='flex flex-col gap-2 mt-3 text-base text-[#32666d] font-semibold'>
               <Link href={'#'} className='categoryLink'>⦾ Salab-Mishri Indulgence</Link>
               <Link href={'#'} className='categoryLink'>⦾ Musli-Sufaid Wellness</Link>
               <Link href={'#'} className='categoryLink'>⦾ Shatavari Bloom</Link>
